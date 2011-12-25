@@ -1,0 +1,26 @@
+{
+    "settings_title": {
+        "message": "LJ Customize settings"
+    },
+    "settings_save": {
+        "message": "Save settings"
+    },
+    "settings_saved": {
+        "message": "Saved!"
+    },
+    "visual_settings_header": {
+        "message": "Visual settings"
+    },
+    "visual_settings_commentsize": {
+        "message": "Comments size"
+    },
+    "visual_settings_commentsize_default": {
+        "message": "Default"
+    },
+    "visual_settings_commentsize_smaller": {
+        "message": "Smaller"
+    },
+    "visual_settings_commentsize_small": {
+        "message": "Small"
+    }
+}

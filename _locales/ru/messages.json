@@ -1,0 +1,26 @@
+{
+    "settings_title": {
+        "message": "Настройки LJ Customize"
+    },
+    "settings_save": {
+        "message": "Сохранить настройки"
+    },
+    "settings_saved": {
+        "message": "Готово!"
+    },
+    "visual_settings_header": {
+        "message": "Настройки внешнего вида"
+    },
+    "visual_settings_commentsize": {
+        "message": "Размер комментариев"
+    },
+    "visual_settings_commentsize_default": {
+        "message": "Обычный"
+    },
+    "visual_settings_commentsize_smaller": {
+        "message": "Поменьше"
+    },
+    "visual_settings_commentsize_small": {
+        "message": "Маленький"
+    }
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>settings_title</title>
+    <style>
+        body {
+            font: 12px/1.2 Arial, sans-serif;
+            padding: 2em 4em;
+        }
+
+        h1 {
+            font-size: 3em;
+        }
+
+        details {
+            border: 1px solid #bbb;
+            padding: 0.3em;
+        }
+
+        summary {
+            font-size: 1.5em;
+            background-color: #eee;
+            padding: 0.3em;
+        }
+
+        .options {
+            overflow: hidden;
+            padding: 0.5em;
+            padding-bottom: 0;
+            margin-bottom: 0;
+            line-height: 3em;
+        }
+
+        .options dt {
+            clear: left;
+            float: left;
+            font-size: 1.2em;
+        }
+
+        .options dd {
+            float: left;
+        }
+
+        .saved {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="lje___ml">settings_title</h1>
+    <details open>
+        <summary class="lje___ml">visual_settings_header</summary>
+        <dl class="options">
+            <dt class="lje___ml">visual_settings_commentsize</dt>
+            <dd><select name="commentsize" id="commentsize">
+                <option value="default" class="lje___ml">visual_settings_commentsize_default</option>
+                <option value="smaller" class="lje___ml">visual_settings_commentsize_smaller</option>
+                <option value="small" class="lje___ml">visual_settings_commentsize_small</option>
+            </select></dd>
+            <dt><button class="save lje___ml">settings_save</button><span class="saved lje___ml">settings_saved</span></dt>
+        </dl>
+    </details>
+    <script>
+    (function() {
+        var ml = chrome.i18n.getMessage,
+            translates = document.querySelectorAll('.lje___ml');
+
+        document.title = ml(document.title);
+        for (var i = 0, l = translates.length; i < l; ++i) {
+            translates[i].innerHTML = ml(translates[i].innerHTML);
+        }
+    })();
+    </script>
+    <script src="enhance.js"></script>
+    <script src="options.js"></script>
+</body>
+</html>

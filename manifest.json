@@ -1,0 +1,17 @@
+{
+    "background_page": "background.html",
+    "name": "Custom livejournal features",
+    "version": "0.1",
+    "content_scripts": [
+    {
+        "matches": ["http://*.livejournal.com/*.html"],
+        "js": ["enhance.js", "client.js"],
+        "css": ["enhance.css"],
+        "run_at": "document_end"
+    }
+    ],
+    "options_page": "options.html",
+    "permissions": [ "http://*/*" ],
+    "update_url": "http://clients2.google.com/service/update2/crx",
+    "default_locale": "en"
+}
