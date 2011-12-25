@@ -30,7 +30,8 @@ var _utils = {
 
 var _settings = function() {
     var defaultOptions = {
-        commentsize: 'default'
+        commentsize: 'default',
+        showsubjects: false
     }
 
     var _data = {},
@@ -48,6 +49,10 @@ var _settings = function() {
 
         setValue: function(key, value) {
             if (!(key in defaultOptions)) { throw new Error('no such option, ' + key); }
+
+            if (value === 'false') {
+                value = false;
+            }
 
             if (defaultOptions[key] === value) {
                 if (_data && key in _data) {

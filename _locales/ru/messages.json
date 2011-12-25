@@ -22,5 +22,14 @@
     },
     "visual_settings_commentsize_small": {
         "message": "Маленький"
+    },
+    "visual_settings_showsubjects": {
+        "message": "Позволить добавлять заголовки к комментариям"
+    },
+    "visual_settings_showsubjects_notshow": {
+        "message": "Нет"
+    },
+    "visual_settings_showsubjects_show": {
+        "message": "Да"
     }
 }

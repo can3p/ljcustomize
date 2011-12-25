@@ -25,21 +25,24 @@
         }
 
         .options {
-            overflow: hidden;
+            display: table;
             padding: 0.5em;
             padding-bottom: 0;
             margin-bottom: 0;
             line-height: 3em;
         }
 
-        .options dt {
-            clear: left;
-            float: left;
-            font-size: 1.2em;
+        .options .row {
+            display: table-row;
         }
 
-        .options dd {
-            float: left;
+        .options .cell {
+            display: table-cell;
+            padding-right: 1em;
+        }
+
+        .options .options_term {
+            font-size: 1.2em;
         }
 
         .saved {
@@ -51,15 +54,26 @@
     <h1 class="lje___ml">settings_title</h1>
     <details open>
         <summary class="lje___ml">visual_settings_header</summary>
-        <dl class="options">
-            <dt class="lje___ml">visual_settings_commentsize</dt>
-            <dd><select name="commentsize" id="commentsize">
-                <option value="default" class="lje___ml">visual_settings_commentsize_default</option>
-                <option value="smaller" class="lje___ml">visual_settings_commentsize_smaller</option>
-                <option value="small" class="lje___ml">visual_settings_commentsize_small</option>
-            </select></dd>
-            <dt><button class="save lje___ml">settings_save</button><span class="saved lje___ml">settings_saved</span></dt>
-        </dl>
+        <div class="options">
+            <div class="row">
+                <div class="cell options_term lje___ml">visual_settings_commentsize</div>
+                <div class="cell"><select name="commentsize" id="commentsize">
+                    <option value="default" class="lje___ml">visual_settings_commentsize_default</option>
+                    <option value="smaller" class="lje___ml">visual_settings_commentsize_smaller</option>
+                    <option value="small" class="lje___ml">visual_settings_commentsize_small</option>
+                </select></div>
+            </div>
+            <div class="row">
+                <div class="cell options_term lje___ml">visual_settings_showsubjects</div>
+                <div class="cell"><select name="showsubjects" id="showsubjects">
+                    <option value="false" class="lje___ml">visual_settings_showsubjects_notshow</option>
+                    <option value="true" class="lje___ml">visual_settings_showsubjects_show</option>
+                </select></div>
+            </div>
+            <div class="row">
+                <div class="cell"><button class="save lje___ml">settings_save</button><span class="saved lje___ml">settings_saved</span></div>
+            </div>
+        </div>
     </details>
     <script>
     (function() {

@@ -22,5 +22,14 @@
     },
     "visual_settings_commentsize_small": {
         "message": "Small"
+    },
+    "visual_settings_showsubjects": {
+        "message": "Allow to set comments subjects"
+    },
+    "visual_settings_showsubjects_notshow": {
+        "message": "No"
+    },
+    "visual_settings_showsubjects_show": {
+        "message": "Yes"
     }
 }
