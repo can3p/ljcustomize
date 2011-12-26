@@ -31,5 +31,8 @@
     },
     "visual_settings_showsubjects_show": {
         "message": "Да"
+    },
+    "client_subject": {
+        "message": "Заголовок: "
     }
 }

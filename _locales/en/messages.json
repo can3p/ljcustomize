@@ -31,5 +31,8 @@
     },
     "visual_settings_showsubjects_show": {
         "message": "Yes"
+    },
+    "client_subject": {
+        "message": "Subject: "
     }
 }
