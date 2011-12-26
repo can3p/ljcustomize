@@ -22,3 +22,138 @@
     max-height: 70px !important;
     max-width: 70px !important;
 }
+
+
+
+
+
+/* Font-size */
+/* 10px */
+.b-singlepost.lje-commentsize-xxs {
+	font-size: 10px !important;
+	}
+
+/* 11px */
+.b-singlepost.lje-commentsize-xs {
+	font-size: 10px !important;
+	}
+
+/* 12px */
+.b-singlepost.lje-commentsize-s {
+	font-size: 10px !important;
+	}
+
+/* 13px */
+.b-singlepost.lje-commentsize-m {
+	font-size: 10px !important;
+	}
+
+/* default (14px) */
+.b-singlepost.lje-commentsize-l {
+	font-size: 10px !important;
+	}
+
+/* 15px */
+.b-singlepost.lje-commentsize-xl {
+	font-size: 10px !important;
+	}
+
+/* 16px */
+.b-singlepost.lje-commentsize-xxl {
+	font-size: 10px !important;
+	}
+
+
+
+/* Font-family */
+/* Arial */
+.b-singlepost.lje-commentsize-arial,
+.b-singlepost.lje-commentsize-arial .b-watering-textarea {
+	font-family: Arial,sans-serif !important;
+	}
+
+/* Verdana */
+.b-singlepost.lje-commentsize-verdana,
+.b-singlepost.lje-commentsize-verdana .b-watering-textarea  {
+	font-family: Verdana,Geneva,sans-serif !important;
+	}
+
+/* Tahoma */
+.b-singlepost.lje-commentsize-tahoma,
+.b-singlepost.lje-commentsize-tahoma .b-watering-textarea  {
+	font-family: Tahoma,Geneva,sans-serif !important;
+	}
+
+/* Helvetica */
+.b-singlepost.lje-commentsize-helvetica,
+.b-singlepost.lje-commentsize-helvetica .b-watering-textarea  {
+	font-family: "Helvetica Neue",Helvetica,sans-serif !important;
+	}
+
+
+
+/* Userpics */
+/* 60x60 */
+.b-singlepost.lje-commentsize-60x60 .b-leaf-userpic,
+.b-singlepost.lje-commentsize-60x60 .b-leaf-userpic-inner {
+	width: 60px;
+	height: 60px;
+	}
+	.b-singlepost.lje-commentsize-60x60 .b-leaf-userpic IMG {
+		max-width: 60px;
+		max-height: 60px;
+		}
+.b-singlepost.lje-commentsize-60x60 .b-leaf-details {
+	padding: 3px 0 0 8px;
+	}
+	.b-singlepost.lje-commentsize-60x60 .b-leaf-username,
+	.b-singlepost.lje-commentsize-60x60 .b-leaf-meta,
+	.b-singlepost.lje-commentsize-60x60 .b-leaf-header .b-leaf-actions {
+		margin-bottom: 3px;
+		}
+
+/* 70x70 */
+.b-singlepost.lje-commentsize-70x70 .b-leaf-userpic,
+.b-singlepost.lje-commentsize-70x70 .b-leaf-userpic-inner {
+	width: 70px;
+	height: 70px;
+	}
+	.b-singlepost.lje-commentsize-70x70 .b-leaf-userpic IMG {
+		max-width: 70px;
+		max-height: 70px;
+		}
+.b-singlepost.lje-commentsize-70x70 .b-leaf-details {
+	padding: 3px 0 0 8px;
+	}
+	.b-singlepost.lje-commentsize-70x70 .b-leaf-username,
+	.b-singlepost.lje-commentsize-70x70 .b-leaf-meta,
+	.b-singlepost.lje-commentsize-70x70 .b-leaf-header .b-leaf-actions {
+		margin-bottom: 3px;
+		}
+
+/* 80x80 */
+.b-singlepost.lje-commentsize-80x80 .b-leaf-userpic,
+.b-singlepost.lje-commentsize-80x80 .b-leaf-userpic-inner {
+	width: 80px;
+	height: 80px;
+	}
+	.b-singlepost.lje-commentsize-80x80 .b-leaf-userpic IMG {
+		max-width: 80px;
+		max-height: 80px;
+		}
+.b-singlepost.lje-commentsize-80x80 .b-leaf-details {
+	padding: 3px 0 0 8px;
+	}
+	.b-singlepost.lje-commentsize-80x80 .b-leaf-username,
+	.b-singlepost.lje-commentsize-80x80 .b-leaf-meta,
+	.b-singlepost.lje-commentsize-80x80 .b-leaf-header .b-leaf-actions {
+		margin-bottom: 3px;
+		}
+
+
+
+/* Controls */
+.b-singlepost.lje-commentsize-visible .b-leaf-controls,
+.b-singlepost.lje-commentsize-visible .b-leaf-header .b-leaf-actions {
+	visibility: visible !important;
+	}
