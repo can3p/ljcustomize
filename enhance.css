@@ -96,58 +96,58 @@
 /* 60x60 */
 .b-singlepost.lje-commentpic-60x60 .b-leaf-userpic,
 .b-singlepost.lje-commentpic-60x60 .b-leaf-userpic-inner {
-	width: 60px;
-	height: 60px;
+	width: 60px !important;
+	height: 60px !important;
 	}
 	.b-singlepost.lje-commentsize-60x60 .b-leaf-userpic IMG {
-		max-width: 60px;
-		max-height: 60px;
+		max-width: 60px !important;
+		max-height: 60px !important;
 		}
 .b-singlepost.lje-commentpic-60x60 .b-leaf-details {
-	padding: 3px 0 0 8px;
+	padding: 3px 0 0 8px !important;
 	}
 	.b-singlepost.lje-commentpic-60x60 .b-leaf-username,
 	.b-singlepost.lje-commentpic-60x60 .b-leaf-meta,
 	.b-singlepost.lje-commentpic-60x60 .b-leaf-header .b-leaf-actions {
-		margin-bottom: 3px;
+		margin-bottom: 0 !important;
 		}
 
 /* 70x70 */
 .b-singlepost.lje-commentpic-70x70 .b-leaf-userpic,
 .b-singlepost.lje-commentpic-70x70 .b-leaf-userpic-inner {
-	width: 70px;
-	height: 70px;
+	width: 70px !important;
+	height: 70px !important;
 	}
 	.b-singlepost.lje-commentpic-70x70 .b-leaf-userpic IMG {
-		max-width: 70px;
-		max-height: 70px;
+		max-width: 70px !important;
+		max-height: 70px !important;
 		}
 .b-singlepost.lje-commentpic-70x70 .b-leaf-details {
-	padding: 3px 0 0 8px;
+	padding: 3px 0 0 8px !important;
 	}
 	.b-singlepost.lje-commentpic-70x70 .b-leaf-username,
 	.b-singlepost.lje-commentpic-70x70 .b-leaf-meta,
 	.b-singlepost.lje-commentpic-70x70 .b-leaf-header .b-leaf-actions {
-		margin-bottom: 3px;
+		margin-bottom: 2px !important;
 		}
 
 /* 80x80 */
 .b-singlepost.lje-commentpic-80x80 .b-leaf-userpic,
 .b-singlepost.lje-commentpic-80x80 .b-leaf-userpic-inner {
-	width: 80px;
-	height: 80px;
+	width: 80px !important;
+	height: 80px !important;
 	}
 	.b-singlepost.lje-commentpic-80x80 .b-leaf-userpic IMG {
-		max-width: 80px;
-		max-height: 80px;
+		max-width: 80px !important;
+		max-height: 80px !important;
 		}
 .b-singlepost.lje-commentpic-80x80 .b-leaf-details {
-	padding: 3px 0 0 8px;
+	padding: 3px 0 0 8px !important;
 	}
 	.b-singlepost.lje-commentpic-80x80 .b-leaf-username,
 	.b-singlepost.lje-commentpic-80x80 .b-leaf-meta,
 	.b-singlepost.lje-commentpic-80x80 .b-leaf-header .b-leaf-actions {
-		margin-bottom: 3px;
+		margin-bottom: 3px !important;
 		}
 
 
