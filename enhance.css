@@ -107,23 +107,23 @@
 
 
 /* Gradients */
-.b-singlepost.lje-commentgradient-hide .b-leaf:not(.b-leaf-collapsed) .b-leaf-header {
+.b-singlepost.lje-suppressgradient .b-leaf:not(.b-leaf-collapsed) .b-leaf-header {
 	background: #BDF !important;
 	filter: none !important;
 	}
-.b-singlepost.lje-commentgradient-hide .b-tree-twig[class$="0"] .b-leaf:not(.b-leaf-collapsed) .b-leaf-header,
-.b-singlepost.lje-commentgradient-hide .b-tree-twig[class$="2"] .b-leaf:not(.b-leaf-collapsed) .b-leaf-header,
-.b-singlepost.lje-commentgradient-hide .b-tree-twig[class$="4"] .b-leaf:not(.b-leaf-collapsed) .b-leaf-header,
-.b-singlepost.lje-commentgradient-hide .b-tree-twig[class$="6"] .b-leaf:not(.b-leaf-collapsed) .b-leaf-header,
-.b-singlepost.lje-commentgradient-hide .b-tree-twig[class$="8"] .b-leaf:not(.b-leaf-collapsed) .b-leaf-header {
+.b-singlepost.lje-suppressgradient .b-tree-twig[class$="0"] .b-leaf:not(.b-leaf-collapsed) .b-leaf-header,
+.b-singlepost.lje-suppressgradient .b-tree-twig[class$="2"] .b-leaf:not(.b-leaf-collapsed) .b-leaf-header,
+.b-singlepost.lje-suppressgradient .b-tree-twig[class$="4"] .b-leaf:not(.b-leaf-collapsed) .b-leaf-header,
+.b-singlepost.lje-suppressgradient .b-tree-twig[class$="6"] .b-leaf:not(.b-leaf-collapsed) .b-leaf-header,
+.b-singlepost.lje-suppressgradient .b-tree-twig[class$="8"] .b-leaf:not(.b-leaf-collapsed) .b-leaf-header {
 	background: #ACE !important;
 	}
-.b-singlepost.lje-commentgradient-hide .b-leaf-screened:not(.b-leaf-collapsed) .b-leaf-header,
-.b-singlepost.lje-commentgradient-hide .b-leaf-frozen:not(.b-leaf-collapsed) .b-leaf-header,
-.b-singlepost.lje-commentgradient-hide .b-leaf-spammed:not(.b-leaf-collapsed) .b-leaf-header {
+.b-singlepost.lje-suppressgradient .b-leaf-screened:not(.b-leaf-collapsed) .b-leaf-header,
+.b-singlepost.lje-suppressgradient .b-leaf-frozen:not(.b-leaf-collapsed) .b-leaf-header,
+.b-singlepost.lje-suppressgradient .b-leaf-spammed:not(.b-leaf-collapsed) .b-leaf-header {
 	background: #E0E0E0 !important;
 	}
-.b-singlepost.lje-commentgradient-hide .b-leaf-selected:not(.b-leaf-collapsed) .b-leaf-header,
-.b-singlepost.lje-commentgradient-hide .b-leaf-collapsed.b-leaf-selected {
+.b-singlepost.lje-suppressgradient .b-leaf-selected:not(.b-leaf-collapsed) .b-leaf-header,
+.b-singlepost.lje-suppressgradient .b-leaf-collapsed.b-leaf-selected {
 	background: #FBE5B3 !important;
 	}

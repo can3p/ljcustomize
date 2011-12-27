@@ -18,19 +18,8 @@ var client = {
     },
 
     initCommentsize: function(value, options) {
-        if (value !== 'l') {
+        if (value !== 'm') {
             this._pageContainer.classList.add('lje-commentsize-' + value);
-        }
-        var upicmap = {
-                m: '80x80',
-                s: '70x70',
-                xs: '60x60',
-                xxs: '60x60'
-            },
-            userpicsize = upicmap[value];
-
-        if (userpicsize) {
-            this._pageContainer.classList.add('lje-commentpic-' + userpicsize);
         }
     },
 
@@ -38,24 +27,33 @@ var client = {
         this._pageContainer.classList.add('lje-commentfont-' + value);
     },
 
+    initSuppressgradient: function(value, options) {
+        if (value) {
+            this._pageContainer.classList.add('lje-suppressgradient');
+        }
+    },
+
     initShowcontrols: function(value, options) {
         if (value) {
-            this._pageContainer.classList.add('lje-commentctrl-visible');
+            this._pageContainer.classList.add('lje-commenthover-visible');
         }
     },
 
     initShowsubjects: function(value, options) {
         if (!value) { return; }
 
+        this._pageContainer.classList.add('lje-commentsubject-show');
+
         var form =  document.getElementById('postform'),
             subject = form.subject,
             subjectval = subject.value;
 
         subject.type = 'text';
-        subject.size = 80;
+        subject.size = 55;
+        subject.placeholder = chrome.i18n.getMessage('client_subject');
+        subject.classList.add('b-watering-subject');
 
-        var markup = '<div class="lje_subject"><label for="lje_subject">' + chrome.i18n.getMessage('client_subject') + 
-                    '</label></div>'
+        var markup = '<div class="b-watering-subjectbox"></div>';
             div = document.createElement('div');
 
         div.innerHTML = markup;

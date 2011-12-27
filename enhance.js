@@ -30,8 +30,9 @@ var _utils = {
 
 var _settings = function() {
     var defaultOptions = {
-        commentsize: 'l',
+        commentsize: 'm',
         commentfont: 'arial',
+        suppressgradient: false,
         showsubjects: false,
         showcontrols: false
     }

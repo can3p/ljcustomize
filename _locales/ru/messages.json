@@ -35,20 +35,17 @@
     "visual_settings_showsubjects": {
         "message": "Позволить добавлять заголовки к комментариям"
     },
-    "visual_settings_showsubjects_notshow": {
-        "message": "Нет"
-    },
-    "visual_settings_showsubjects_show": {
-        "message": "Да"
-    },
     "visual_settings_showcontrols": {
         "message": "Всегда показывать кнопки управления комментариями."
     },
-    "visual_settings_showcontrols_notshow": {
-        "message": "Нет"
+    "visual_settings_suppressgradient": {
+        "message": "Вернуть старую расцветку комментариев"
     },
-    "visual_settings_showcontrols_show": {
-        "message": "Да"
+    "visual_settings_no": {
+        "message": "No"
+    },
+    "visual_settings_yes": {
+        "message": "Yes"
     },
     "client_subject": {
         "message": "Заголовок: "

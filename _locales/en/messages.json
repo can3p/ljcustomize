@@ -14,26 +14,17 @@
     "visual_settings_commentsize": {
         "message": "Comments size"
     },
-    "visual_settings_commentsize_xxs": {
-        "message": "xxs"
-    },
     "visual_settings_commentsize_xs": {
-        "message": "xs"
+        "message": "XS"
     },
     "visual_settings_commentsize_s": {
-        "message": "s"
-    },
-    "visual_settings_commentsize_m": {
-        "message": "m"
-    },
-    "visual_settings_commentsize_xxl": {
-        "message": "xxl"
-    },
-    "visual_settings_commentsize_xl": {
-        "message": "xl"
+        "message": "S"
     },
     "visual_settings_commentsize_default": {
         "message": "Default"
+    },
+    "visual_settings_commentsize_l": {
+        "message": "L"
     },
     "visual_settings_commentfont": {
         "message": "Comment font"
@@ -53,19 +44,16 @@
     "visual_settings_showsubjects": {
         "message": "Allow to set comments subjects"
     },
-    "visual_settings_showsubjects_notshow": {
-        "message": "No"
-    },
-    "visual_settings_showsubjects_show": {
-        "message": "Yes"
-    },
     "visual_settings_showcontrols": {
         "message": "Always show control buttons over comments"
     },
-    "visual_settings_showcontrols_notshow": {
+    "visual_settings_suppressgradient": {
+        "message": "Return old comments colors"
+    },
+    "visual_settings_no": {
         "message": "No"
     },
-    "visual_settings_showcontrols_show": {
+    "visual_settings_yes": {
         "message": "Yes"
     },
     "client_subject": {
