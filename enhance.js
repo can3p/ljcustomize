@@ -30,8 +30,10 @@ var _utils = {
 
 var _settings = function() {
     var defaultOptions = {
-        commentsize: 'default',
-        showsubjects: false
+        commentsize: 'l',
+        commentfont: 'arial',
+        showsubjects: false,
+        showcontrols: false
     }
 
     var _data = {},
@@ -39,6 +41,7 @@ var _settings = function() {
 
     return {
         setData: function(data) {
+            data = data || {};
             _data = data;
             _mergedData = _utils.extend({}, defaultOptions, _data);
         },

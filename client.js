@@ -18,8 +18,29 @@ var client = {
     },
 
     initCommentsize: function(value, options) {
-        if (value === 'smaller' || value === 'small') {
+        if (value !== 'l') {
             this._pageContainer.classList.add('lje-commentsize-' + value);
+        }
+        var upicmap = {
+                m: '80x80',
+                s: '70x70',
+                xs: '60x60',
+                xxs: '60x60'
+            },
+            userpicsize = upicmap[value];
+
+        if (userpicsize) {
+            this._pageContainer.classList.add('lje-commentpic-' + userpicsize);
+        }
+    },
+
+    initCommentfont: function(value, options) {
+        this._pageContainer.classList.add('lje-commentfont-' + value);
+    },
+
+    initShowcontrols: function(value, options) {
+        if (value) {
+            this._pageContainer.classList.add('lje-commentctrl-visible');
         }
     },
 

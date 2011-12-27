@@ -14,14 +14,41 @@
     "visual_settings_commentsize": {
         "message": "Comments size"
     },
+    "visual_settings_commentsize_xxs": {
+        "message": "xxs"
+    },
+    "visual_settings_commentsize_xs": {
+        "message": "xs"
+    },
+    "visual_settings_commentsize_s": {
+        "message": "s"
+    },
+    "visual_settings_commentsize_m": {
+        "message": "m"
+    },
+    "visual_settings_commentsize_xxl": {
+        "message": "xxl"
+    },
+    "visual_settings_commentsize_xl": {
+        "message": "xl"
+    },
     "visual_settings_commentsize_default": {
         "message": "Default"
     },
-    "visual_settings_commentsize_smaller": {
-        "message": "Smaller"
+    "visual_settings_commentfont": {
+        "message": "Comment font"
     },
-    "visual_settings_commentsize_small": {
-        "message": "Small"
+    "visual_settings_commentfont_arial": {
+        "message": "Arial"
+    },
+    "visual_settings_commentfont_verdana": {
+        "message": "Verdana"
+    },
+    "visual_settings_commentfont_tahoma": {
+        "message": "Tahoma"
+    },
+    "visual_settings_commentfont_helvetica": {
+        "message": "Helvetica"
     },
     "visual_settings_showsubjects": {
         "message": "Allow to set comments subjects"
@@ -30,6 +57,15 @@
         "message": "No"
     },
     "visual_settings_showsubjects_show": {
+        "message": "Yes"
+    },
+    "visual_settings_showcontrols": {
+        "message": "Always show control buttons over comments"
+    },
+    "visual_settings_showcontrols_notshow": {
+        "message": "No"
+    },
+    "visual_settings_showcontrols_show": {
         "message": "Yes"
     },
     "client_subject": {

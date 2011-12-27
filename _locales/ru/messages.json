@@ -17,11 +17,20 @@
     "visual_settings_commentsize_default": {
         "message": "Обычный"
     },
-    "visual_settings_commentsize_smaller": {
-        "message": "Поменьше"
+    "visual_settings_commentfont": {
+        "message": "Шрифт в комментариях"
     },
-    "visual_settings_commentsize_small": {
-        "message": "Маленький"
+    "visual_settings_commentfont_arial": {
+        "message": "Arial"
+    },
+    "visual_settings_commentfont_verdana": {
+        "message": "Verdana"
+    },
+    "visual_settings_commentfont_tahoma": {
+        "message": "Tahoma"
+    },
+    "visual_settings_commentfont_helvetica": {
+        "message": "Helvetica"
     },
     "visual_settings_showsubjects": {
         "message": "Позволить добавлять заголовки к комментариям"
@@ -30,6 +39,15 @@
         "message": "Нет"
     },
     "visual_settings_showsubjects_show": {
+        "message": "Да"
+    },
+    "visual_settings_showcontrols": {
+        "message": "Всегда показывать кнопки управления комментариями."
+    },
+    "visual_settings_showcontrols_notshow": {
+        "message": "Нет"
+    },
+    "visual_settings_showcontrols_show": {
         "message": "Да"
     },
     "client_subject": {
