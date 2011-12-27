@@ -48,20 +48,41 @@ var client = {
             subject = form.subject,
             subjectval = subject.value;
 
-        subject.type = 'text';
-        subject.size = 55;
-        subject.placeholder = chrome.i18n.getMessage('client_subject');
-        subject.classList.add('b-watering-subject');
+        var moveSubjectField = function() {
+                subject.type = 'text';
+                subject.size = 55;
+                subject.placeholder = chrome.i18n.getMessage('client_subject');
+                subject.classList.add('b-watering-subject');
 
-        var markup = '<div class="b-watering-subjectbox"></div>';
-            div = document.createElement('div');
+                var markup = '<div class="b-watering-subjectbox"></div>';
+                    div = document.createElement('div');
 
-        div.innerHTML = markup;
-        var insertEl = div.firstChild,
-            comment = form.querySelector('.b-watering-comment');
+                div.innerHTML = markup;
+                var insertEl = div.firstChild,
+                    comment = form.querySelector('.b-watering-comment');
 
-        comment.parentNode.insertBefore(insertEl, comment);
-        insertEl.appendChild(subject);
+                comment.parentNode.insertBefore(insertEl, comment);
+                insertEl.appendChild(subject);
+            },
+            bindAddCommentLinks = function(container) {
+                container.addEventListener('click', function(ev) {
+                    var control = ev.srcElement;
+                    //we set subject input value on every click, because if the form will close,
+                    //this action will do no harm, and it's a correct action otherwise.
+                    if (_utils.matchesSelector(control, '.b-leaf-actions-reply .b-pseudo')) {
+                        var comment = _utils.closest(control, '.b-leaf'),
+                            subjectNode = comment.querySelector('.b-leaf-subject'),
+                            subjectHeader = subjectNode && subjectNode.innerHTML.replace(/^(Re:\s*)+/,'') || '';
+
+                        if (subjectHeader.length > 0) {
+                            subject.value = 'Re: ' + subjectHeader;
+                        }
+                    }
+                }, false)
+            };
+        
+        moveSubjectField();
+        bindAddCommentLinks(this._pageContainer);
     }
 }
 
