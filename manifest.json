@@ -4,7 +4,7 @@
     "version": "0.1",
     "content_scripts": [
     {
-        "matches": ["http://*.livejournal.com/*.html*"],
+        "matches": ["http://*/*"],
         "js": ["enhance.js", "client.js"],
         "css": ["enhance.css"],
         "run_at": "document_end"

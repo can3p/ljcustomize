@@ -3,12 +3,23 @@ var client = {
     init: function() {
         this._pageContainer = document.querySelector('.b-singlepost');
 
-        if (!this._pageContainer) { return; } //we need only s1 pages with new design
-
         chrome.extension.sendRequest({action: 'getOptions'}, function(response) {
             _settings.setData(response);
 
             var options = _settings.getOptions();
+
+            var domains = options.workingDomains.split('\n'),
+                doInit = false;
+
+            domains.forEach(function(domain) {
+                if (location.href.match(RegExp('^http:\/\/[a-z0-9]+\.' + domain.replace(/(\.|\+|\*)/g, '\\$1'), 'i'))) {
+                    doInit = true;
+                }
+            });
+
+            if (!doInit) {
+                return;
+            }
 
             Object.keys(options).forEach(function(prop) {
                 var method = 'init' + _utils.firstUpper(prop);
@@ -18,22 +29,30 @@ var client = {
     },
 
     initCommentsize: function(value, options) {
+        if (!this._pageContainer) { return; } //we need only s1 pages with new design
+
         if (value !== 'm') {
             this._pageContainer.classList.add('lje-commentsize-' + value);
         }
     },
 
     initCommentfont: function(value, options) {
+        if (!this._pageContainer) { return; } //we need only s1 pages with new design
+
         this._pageContainer.classList.add('lje-commentfont-' + value);
     },
 
     initSuppressgradient: function(value, options) {
+        if (!this._pageContainer) { return; } //we need only s1 pages with new design
+
         if (value) {
             this._pageContainer.classList.add('lje-suppressgradient');
         }
     },
 
     initShowcontrols: function(value, options) {
+        if (!this._pageContainer) { return; } //we need only s1 pages with new design
+
         if (value) {
             this._pageContainer.classList.add('lje-commenthover-visible');
         }
@@ -41,6 +60,8 @@ var client = {
 
     initShowsubjects: function(value, options) {
         if (!value) { return; }
+        if (!this._pageContainer) { return; } //we need only s1 pages with new design
+
 
         this._pageContainer.classList.add('lje-commentsubject-show');
 

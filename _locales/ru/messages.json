@@ -8,6 +8,12 @@
     "settings_saved": {
         "message": "Готово!"
     },
+    "general_settings_header": {
+        "message": "Общие настройки"
+    },
+    "general_settings_workingDomains": {
+        "message": "Домены, на которых должно работать расширение"
+    },
     "visual_settings_header": {
         "message": "Настройки внешнего вида"
     },

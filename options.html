@@ -16,6 +16,7 @@
         details {
             border: 1px solid #bbb;
             padding: 0.3em;
+            margin-bottom: 2em;
         }
 
         summary {
@@ -38,6 +39,7 @@
 
         .options .cell {
             display: table-cell;
+            vertical-align: top;
             padding-right: 1em;
         }
 
@@ -52,6 +54,20 @@
 </head>
 <body>
     <h1 class="lje___ml">settings_title</h1>
+    <details open>
+        <summary class="lje___ml">general_settings_header</summary>
+        <div class="options">
+            <div class="row">
+                <div class="cell options_term lje___ml">general_settings_workingDomains</div>
+                <div class="cell">
+                    <textarea name="workingDomains" id="workingDomains" rows="5" cols="60"></textarea>
+                </div>
+            </div>
+            <div class="row">
+                <div class="cell"><button class="save lje___ml">settings_save</button><span class="saved lje___ml">settings_saved</span></div>
+            </div>
+    </details>
+
     <details open>
         <summary class="lje___ml">visual_settings_header</summary>
         <div class="options">

@@ -8,6 +8,12 @@
     "settings_saved": {
         "message": "Saved!"
     },
+    "general_settings_header": {
+        "message": "General settings"
+    },
+    "general_settings_workingDomains": {
+        "message": "Domains where extensions should work"
+    },
     "visual_settings_header": {
         "message": "Visual settings"
     },

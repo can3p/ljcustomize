@@ -72,7 +72,8 @@ var _settings = function() {
         commentfont: 'arial',
         suppressgradient: false,
         showsubjects: false,
-        showcontrols: false
+        showcontrols: false,
+        workingDomains: 'livejournal.com'
     }
 
     var _data = {},
