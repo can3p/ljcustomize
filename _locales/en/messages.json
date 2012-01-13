@@ -65,7 +65,7 @@
     "client_subject": {
         "message": "Subject: "
     },
-    "client_clear_draft: {
+    "client_clear_draft": {
         "message": "Clear draft"
     },
     "client_clear_draft_confirm": {

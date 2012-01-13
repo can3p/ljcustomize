@@ -56,7 +56,7 @@
     "client_subject": {
         "message": "Заголовок: "
     },
-    "client_clear_draft: {
+    "client_clear_draft": {
         "message": "Удалить черновик"
     },
     "client_clear_draft_confirm": {
