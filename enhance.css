@@ -127,3 +127,12 @@
 .b-singlepost.lje-suppressgradient .b-leaf-collapsed.b-leaf-selected {
 	background: #FBE5B3 !important;
 	}
+
+.clear-draft {
+    height: 20px;
+}
+
+.clear-draft a {
+    -webkit-transition: opacity 1s ease-out;
+    position: absolute;
+}

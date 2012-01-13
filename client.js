@@ -9,15 +9,15 @@ var client = {
             var options = _settings.getOptions();
 
             var domains = options.workingDomains.split('\n'),
-                doInit = false;
+                activeDomain;
 
             domains.forEach(function(domain) {
                 if (location.href.match(RegExp('^http:\/\/[a-z0-9]+\.' + domain.replace(/(\.|\+|\*)/g, '\\$1'), 'i'))) {
-                    doInit = true;
+                    activeDomain = domain;
                 }
             });
 
-            if (!doInit) {
+            if (!activeDomain) {
                 return;
             }
 
@@ -25,6 +25,8 @@ var client = {
                 var method = 'init' + _utils.firstUpper(prop);
                 (method in this) && this[method](options[prop], options); 
             }.bind(this));
+
+            this.initUpdateBml(activeDomain, options);
         }.bind(this));
     },
 
@@ -104,6 +106,55 @@ var client = {
         
         moveSubjectField();
         bindAddCommentLinks(this._pageContainer);
+    },
+
+    initUpdateBml: function(domain, options) {
+        if (!location.href.match(RegExp('^http:\/\/[a-z0-9]+\.' + domain.replace(/(\.|\+|\*)/g, '\\$1') + '\/update\.bml', 'i'))) {
+            return;
+        }
+
+        var draftChecker = function() {
+                if (window.isInitDraft) {
+                    var event = document.createEvent('Event');
+                    event.initEvent('draftExists', true, true);
+                    document.body.dispatchEvent(event);
+                }
+            },
+            handleDraft = function() {
+                document.body.removeEventListener('draftExists', handleDraft);
+                injectClearButton();
+            },
+            injectClearButton = function() {
+                var div = document.createElement('div'),
+                    link = document.createElement('a');
+
+                div.classList.add('clear-draft');
+                div.appendChild(link);
+
+                link.textContent = chrome.i18n.getMessage('client_clear_draft');
+                link.href = '#';
+                link.addEventListener('click', clearDraft, false);
+
+                var node = document.querySelector('#draftstatus');
+
+                node.parentNode.insertBefore(div, node);
+                div.appendChild(node);
+            },
+            clearDraft = function(ev) {
+                ev.preventDefault();
+                if(window.confirm(chrome.i18n.getMessage('client_clear_draft'))) {
+                    var req = new XMLHttpRequest();
+                    req.open("POST", 'http://www.' + domain + '/tools/endpoints/draft.bml', true);
+                    req.setRequestHeader( "Content-Type", "application/x-www-form-urlencoded");
+                    req.send('saveDraft=');
+                    ev.target.style.opacity = 0;
+                }
+            };
+
+        document.body.addEventListener('draftExists', handleDraft, false);
+        var script = document.createElement('script');
+        script.text = '(' + draftChecker.toString() + ')()';
+        document.body.appendChild(script);
     }
 }
 
