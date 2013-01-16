@@ -1,1 +1,10 @@
 This chrome extension provides some additional tweaks and options not availible on the original site.
+
+Features:
+
+* Subject in comments
+* Custom font in the comments
+* Custom comment size
+* Ability to delete the draft in the old version of "Create new post" page
+* Ability to disable gradients on comments on the comments page
+* Always show comment controls
