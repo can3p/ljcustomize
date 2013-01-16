@@ -8,3 +8,7 @@ Features:
 * Ability to delete the draft in the old version of "Create new post" page
 * Ability to disable gradients on comments on the comments page
 * Always show comment controls
+
+The source: https://github.com/can3p/ljcustomize
+
+Pull requests with new features, fixes and translations are always welcome!
