@@ -1,5 +1,9 @@
 {
-    "background_page": "background.html",
+    "manifest_version": 2,
+    "background": {
+        "scripts": ["enhance.js", "background.js"],
+        "persistant": false
+    },
     "name": "Custom livejournal features",
     "version": "0.1",
     "content_scripts": [

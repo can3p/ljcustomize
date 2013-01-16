@@ -83,7 +83,7 @@ var client = {
 
                 div.innerHTML = markup;
                 var insertEl = div.firstChild,
-                    comment = form.querySelector('.b-watering-comment');
+                    comment = form.querySelector('.b-updateform');
 
                 comment.parentNode.insertBefore(insertEl, comment);
                 insertEl.appendChild(subject);
@@ -104,7 +104,7 @@ var client = {
                     }
                 }, false)
             };
-        
+
         moveSubjectField();
         bindAddCommentLinks(this._pageContainer);
     },
@@ -159,14 +159,13 @@ var client = {
     },
 
     initIndex: function(domain, options) {
-        var node = document.querySelector('.selfpromo-bubble p:nth-child(2) b');
+        var node = document.querySelector('.selfpromo-bubble-entry p:nth-child(2) b');
         if (!node) { return; }
 
         var price = parseInt( node.innerHTML.replace(/\s+/g, ''), 10),
-            minMul = 0.0083,
-            maxMul = 0.01;
+            mul = 0.01;
 
-        node.innerHTML += ' USD $(' + (minMul * price) + ' - ' + (maxMul * price) + ')';
+        node.innerHTML += ' (USD $' + (mul * price) + ')';
     }
 
 }
