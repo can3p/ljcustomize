@@ -165,18 +165,49 @@ var client = {
           LJ.Api.takeover('draft.set', function(request, callback, next) {
               last_state = request;
 
-              var cb = function(result) {
+              var cb = function(request, result) {
                 var had_error = result.hasOwnProperty('error');
 
-                callback.apply(null, arguments);
+                if (last_state !== request) { //another request has already been made, leave the work for him
+                  return;
+                }
+
+                if (!had_error) {
+                  last_state = null;
+                }
+
+                callback(result);
 
                 toggle(container, 'b-updatepage-draft-autosave-error', had_error);
                 toggle(container, 'b-updatepage-draft-autosave', !had_error);
                 time.innerHTML = LJ.Util.Date.format(new Date(), ' %T');
-              };
+              }.bind(null, request);
 
             next(request, cb);
           })
+
+          var widget = jQuery('#post').data('postForm');
+
+          widget.element.off('submit');
+          widget.element.on('submit', function(e) {
+            if (!last_state) {
+              widget._submit();
+              return;
+            }
+
+            e.preventDefault();
+            LJ.Api.call('draft.set', last_state, function(result) {
+              var had_error = result.hasOwnProperty('error');
+
+              if (had_error) {
+                alert("Unable to save draft of your post. It seems that server is unavailible now. Please check network connection to make the post");
+              } else {
+                // if everything is ok, bypass all handlers and submit form
+                widget._submit();
+                widget.element.get(0).submit();
+              }
+            });
+          });
         });
     },
 
