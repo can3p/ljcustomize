@@ -1,0 +1,3 @@
+0.2 (2013/09/29)
+
+* Handle draft save errors and assure that draft was saved before posting

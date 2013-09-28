@@ -4,8 +4,10 @@
         "scripts": ["enhance.js", "background.js"],
         "persistant": false
     },
-    "name": "Custom livejournal features",
-    "version": "0.1",
+    "name": "Livejournal customization",
+    "version": "0.2",
+    "homepage_url": "https://github.com/can3p/ljcustomize",
+    "description": "Tweaks for livejournal interface",
     "content_scripts": [
     {
         "matches": ["http://*/*"],
