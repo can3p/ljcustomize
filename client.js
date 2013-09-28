@@ -1,3 +1,10 @@
+var bridge = {
+  run: function(func) {
+    var script = document.createElement('script');
+    script.text = '(' + func.toString() + ')()';
+    document.body.appendChild(script);
+  }
+}
 
 var client = {
     init: function() {
@@ -114,48 +121,55 @@ var client = {
             return;
         }
 
-        var draftChecker = function() {
-                if (window.isInitDraft) {
-                    var event = document.createEvent('Event');
-                    event.initEvent('draftExists', true, true);
-                    document.body.dispatchEvent(event);
+        bridge.run(function() {
+          var orig_call = LJ.Api.call.bind(LJ.Api),
+            takeovers = {};
+
+          LJ.Api.call = function(method, body, callback) {
+            if (!takeovers.hasOwnProperty(method)) {
+              orig_call.apply(null, arguments);
+            } else {
+              takeovers[method](body, callback, orig_call.bind(null, method));
+            }
+          };
+
+          LJ.Api.takeover = function(method, func) {
+            takeovers[method] = func;
+          };
+        });
+
+        document.querySelector('.b-updatepage-draft').insertAdjacentHTML('beforeend', '<span class="b-updatepage-draft-title-autosave-error">Alarm! Error occured during draft saving at <span class="b-updatepage-draft-time"></span></span>');
+
+        bridge.run(function() {
+          var container = document.querySelector('.b-updatepage-draft'),
+              time = container.querySelector('.b-updatepage-draft-title-autosave-error .b-updatepage-draft-time');
+
+          function toggle(el, className, bool) {
+            if (bool) {
+              el.classList.add(className);
+            } else {
+              el.classList.remove(className);
+            }
+          }
+
+          LJ.Api.takeover('draft.set', function(request, callback, next) {
+              var cb = function(result) {
+                var had_error = result.hasOwnProperty('error');
+
+                if (had_error) {
+                  console.log('Some shit happened during draft editing');
                 }
-            },
-            handleDraft = function() {
-                document.body.removeEventListener('draftExists', handleDraft);
-                injectClearButton();
-            },
-            injectClearButton = function() {
-                var div = document.createElement('div'),
-                    link = document.createElement('a');
 
-                div.classList.add('clear-draft');
-                div.appendChild(link);
+                callback.apply(null, arguments);
 
-                link.textContent = chrome.i18n.getMessage('client_clear_draft');
-                link.href = '#';
-                link.addEventListener('click', clearDraft, false);
+                toggle(container, 'b-updatepage-draft-autosave-error', had_error);
+                toggle(container, 'b-updatepage-draft-autosave', !had_error);
+                time.innerHTML = LJ.Util.Date.format(new Date(), ' %T');
+              };
 
-                var node = document.querySelector('#draftstatus');
-
-                node.parentNode.insertBefore(div, node);
-                div.appendChild(node);
-            },
-            clearDraft = function(ev) {
-                ev.preventDefault();
-                if(window.confirm(chrome.i18n.getMessage('client_clear_draft'))) {
-                    var req = new XMLHttpRequest();
-                    req.open("POST", 'http://www.' + domain + '/tools/endpoints/draft.bml', true);
-                    req.setRequestHeader( "Content-Type", "application/x-www-form-urlencoded");
-                    req.send('saveDraft=');
-                    ev.target.style.opacity = 0;
-                }
-            };
-
-        document.body.addEventListener('draftExists', handleDraft, false);
-        var script = document.createElement('script');
-        script.text = '(' + draftChecker.toString() + ')()';
-        document.body.appendChild(script);
+            next(request, cb);
+          })
+        });
     },
 
     initIndex: function(domain, options) {

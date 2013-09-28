@@ -128,11 +128,11 @@
 	background: #FBE5B3 !important;
 	}
 
-.clear-draft {
-    height: 20px;
+.b-updatepage-draft-title-autosave-error {
+	display: none;
+	color: red;
 }
 
-.clear-draft a {
-    -webkit-transition: opacity 1s ease-out;
-    position: absolute;
+.b-updatepage-draft-autosave-error .b-updatepage-draft-title-autosave-error {
+	display: block;
 }
