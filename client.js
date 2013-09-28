@@ -138,11 +138,13 @@ var client = {
           };
         });
 
-        document.querySelector('.b-updatepage-draft').insertAdjacentHTML('beforeend', '<span class="b-updatepage-draft-title-autosave-error">Alarm! Error occured during draft saving at <span class="b-updatepage-draft-time"></span></span>');
+        document.querySelector('.b-updatepage-draft').insertAdjacentHTML('beforeend', '<span class="b-updatepage-draft-title-autosave-error">Alarm! Error occured during draft saving at <span class="b-updatepage-draft-time"></span> <a href="#" class="b-updatepage-draft-retry">Try Again</a></span>');
 
         bridge.run(function() {
           var container = document.querySelector('.b-updatepage-draft'),
-              time = container.querySelector('.b-updatepage-draft-title-autosave-error .b-updatepage-draft-time');
+              time = container.querySelector('.b-updatepage-draft-title-autosave-error .b-updatepage-draft-time'),
+              retry = container.querySelector('.b-updatepage-draft-retry'),
+              last_state;
 
           function toggle(el, className, bool) {
             if (bool) {
@@ -152,13 +154,19 @@ var client = {
             }
           }
 
+          retry.addEventListener('click', function(ev) {
+            ev.preventDefault();
+            toggle(container, 'b-updatepage-draft-autosave-error', false);
+            toggle(container, 'b-updatepage-draft-autosave', false);
+
+            jQuery(container).data('draft').save(last_state);
+          }, false);
+
           LJ.Api.takeover('draft.set', function(request, callback, next) {
+              last_state = request;
+
               var cb = function(result) {
                 var had_error = result.hasOwnProperty('error');
-
-                if (had_error) {
-                  console.log('Some shit happened during draft editing');
-                }
 
                 callback.apply(null, arguments);
 
