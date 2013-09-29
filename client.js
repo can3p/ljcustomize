@@ -146,18 +146,10 @@ var client = {
               retry = container.querySelector('.b-updatepage-draft-retry'),
               last_state;
 
-          function toggle(el, className, bool) {
-            if (bool) {
-              el.classList.add(className);
-            } else {
-              el.classList.remove(className);
-            }
-          }
-
           retry.addEventListener('click', function(ev) {
             ev.preventDefault();
-            toggle(container, 'b-updatepage-draft-autosave-error', false);
-            toggle(container, 'b-updatepage-draft-autosave', false);
+            container.classList.toggle('b-updatepage-draft-autosave-error', false);
+            container.classList.toggle('b-updatepage-draft-autosave', false);
 
             jQuery(container).data('draft').save(last_state);
           }, false);
@@ -178,8 +170,8 @@ var client = {
 
                 callback(result);
 
-                toggle(container, 'b-updatepage-draft-autosave-error', had_error);
-                toggle(container, 'b-updatepage-draft-autosave', !had_error);
+                container.classList.toggle('b-updatepage-draft-autosave-error', had_error);
+                container.classList.toggle('b-updatepage-draft-autosave', !had_error);
                 time.innerHTML = LJ.Util.Date.format(new Date(), ' %T');
               }.bind(null, request);
 
